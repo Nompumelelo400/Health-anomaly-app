@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E8EAF6"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:padding="20dp"
+        android:elevation="6dp"
+        android:layout_margin="10dp"
+        android:clipToOutline="true"
+        android:translationZ="4dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="40dp">
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Health Results"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#3F51B5"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Heart Rate -->
+        <EditText
+            android:id="@+id/etHeartRate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Heart Rate (bpm)"
+            android:inputType="number"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"
+            android:background="@android:drawable/edit_text"
+            android:textColor="#212121"
+            android:textColorHint="#9E9E9E" />
+
+        <!-- Steps -->
+        <EditText
+            android:id="@+id/etSteps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Steps"
+            android:inputType="number"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"
+            android:background="@android:drawable/edit_text"
+            android:textColor="#212121"
+            android:textColorHint="#9E9E9E" />
+
+        <!-- Calories -->
+        <EditText
+            android:id="@+id/etCalories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Calories (kcal)"
+            android:inputType="number"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"
+            android:background="@android:drawable/edit_text"
+            android:textColor="#212121"
+            android:textColorHint="#9E9E9E" />
+
+        <!-- Sleep -->
+        <EditText
+            android:id="@+id/etSleep"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Sleep (hours)"
+            android:inputType="numberDecimal"
+            android:padding="12dp"
+            android:layout_marginBottom="24dp"
+            android:background="@android:drawable/edit_text"
+            android:textColor="#212121"
+            android:textColorHint="#9E9E9E" />
+
+        <!-- Save Button -->
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Save Result"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="#3949AB"
+            android:textColor="#FFFFFF"
+            android:elevation="4dp"
+            android:textAllCaps="false"
+            android:fontFamily="sans-serif-medium" />
+
+        <!-- View Results Button -->
+        <Button
+            android:id="@+id/btnViewResults"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="View Results"
+            android:backgroundTint="#5C6BC0"
+            android:textColor="#FFFFFF"
+            android:elevation="4dp"
+            android:textAllCaps="false"
+            android:fontFamily="sans-serif-medium" />
+
+        <!-- Back Button -->
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Back"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#9FA8DA"
+            android:textColor="#FFFFFF"
+            android:elevation="4dp"
+            android:textAllCaps="false"
+            android:fontFamily="sans-serif-medium" />
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+        <!-- Rounded outlined Material field with floating label -->
+        <style name="Widget.HealthAlert.OutlinedInput" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <item name="boxBackgroundMode">outline</item>
+            <item name="boxStrokeColor">@color/colorAccent</item>
+            <item name="hintTextColor">@color/colorTextSecondary</item>
+            <item name="android:textColor">@android:color/white</item>
+            <item name="shapeAppearanceOverlay">@style/Shape.HealthAlert.RoundedCorner12</item>
+        </style>
+
+        <style name="Shape.HealthAlert.RoundedCorner12" parent="">
+            <item name="cornerFamily">rounded</item>
+            <item name="cornerSize">12dp</item>
+        </style>
+
+
+</resources>

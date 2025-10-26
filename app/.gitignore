@@ -1,0 +1,17 @@
+# Android Studio / Gradle build files
+.gradle/
+build/
+**/build/
+.idea/
+local.properties
+
+# Generated files
+*.iml
+*.apk
+*.keystore
+
+# Android Studio captures
+captures/
+
+# Gradle cache
+.gradle/

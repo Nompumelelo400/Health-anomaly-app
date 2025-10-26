@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "716657962081",
+    "project_id": "smart-alert-c2d4d",
+    "storage_bucket": "smart-alert-c2d4d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:716657962081:android:e2f443c06a921ea3d0ce20",
+        "android_client_info": {
+          "package_name": "com.example.healthalert"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBd_oa_E7_4EoZ0EHaFkHchz8XXrxYYo28"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
