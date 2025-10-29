@@ -1,6 +1,10 @@
 package com.example.healthalert;
 
+
+
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -11,10 +15,11 @@ import android.widget.Toast;
 public class DashboardActivity extends AppCompatActivity {
 
     LinearLayout btnDashboard, btnProfile, btnMessages;
-    TextView heartRateText, stepsText, caloriesText, sleepText;
+    TextView heartRateText, bloodPressureText, oxygenLevelsText, sleepText;
     SQLiteHelper db;
     String currentUserEmail; // We’ll pass this from login
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,8 +27,8 @@ public class DashboardActivity extends AppCompatActivity {
 
         // --- Initialize UI ---
         heartRateText = findViewById(R.id.textHeartRate);
-        stepsText = findViewById(R.id.textSteps);
-        caloriesText = findViewById(R.id.textCalories);
+        bloodPressureText = findViewById(R.id.textBloodPressure);
+        oxygenLevelsText = findViewById(R.id.textOxygenLevels);
         sleepText = findViewById(R.id.textSleep);
 
         btnDashboard = findViewById(R.id.btn_dashboard);
@@ -72,8 +77,8 @@ public class DashboardActivity extends AppCompatActivity {
         if (cursor.moveToFirst()) {
             // Mock vitals; could later fetch from a "vitals" table
             heartRateText.setText("72 bpm");
-            stepsText.setText("8,540 steps");
-            caloriesText.setText("1,230 kcal");
+            bloodPressureText.setText("8,540 steps");
+            oxygenLevelsText.setText("1,230 kcal");
             sleepText.setText("7h 45m");
         } else {
             Toast.makeText(this, "Patient data not found", Toast.LENGTH_LONG).show();

@@ -27,8 +27,8 @@ public class ViewResultsTestActivity extends AppCompatActivity {
         for (int i = 1; i <= 5; i++) {
             HashMap<String, String> result = new HashMap<>();
             result.put("heartRate", 60 + i*5 + " bpm");
-            result.put("steps", 5000 + i*1000 + " steps");
-            result.put("calories", 2000 + i*100 + " kcal");
+            result.put("bloodPressure", 110 + i*5  +" BP");
+            result.put("oxygenLevels", 70 + i*2 + "%");
             result.put("sleep", 6 + i*0.5 + " h");
             dummyResults.add(result);
         }
@@ -59,8 +59,8 @@ public class ViewResultsTestActivity extends AppCompatActivity {
             TextView tvResult = new TextView(this);
             tvResult.setText(
                     "Heart Rate: " + result.get("heartRate") + "\n" +
-                            "Steps: " + result.get("steps") + "\n" +
-                            "Calories: " + result.get("calories") + "\n" +
+                            "Blood Pressure: " + result.get("bloodPressure") + "\n" +
+                            "Oxygen Levels: " + result.get("oxygenLevels") + "\n" +
                             "Sleep: " + result.get("sleep")
             );
             tvResult.setTextSize(16);

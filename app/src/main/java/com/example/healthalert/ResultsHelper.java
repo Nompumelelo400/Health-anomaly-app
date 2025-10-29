@@ -15,8 +15,8 @@ public class ResultsHelper extends SQLiteOpenHelper {
     public static final String COL_ID = "id";
     public static final String COL_USER_EMAIL = "userEmail";
     public static final String COL_HEART_RATE = "heartRate";
-    public static final String COL_STEPS = "steps";
-    public static final String COL_CALORIES = "calories";
+    public static final String COL_BLOOD_PRESSURE = "steps";
+    public static final String COL_OXYGEN_LEVELS = "calories";
     public static final String COL_SLEEP = "sleep";
 
     public ResultsHelper(Context context) {
@@ -29,8 +29,8 @@ public class ResultsHelper extends SQLiteOpenHelper {
                 COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                 COL_USER_EMAIL + " TEXT," +
                 COL_HEART_RATE + " INTEGER," +
-                COL_STEPS + " INTEGER," +
-                COL_CALORIES + " INTEGER," +
+                COL_BLOOD_PRESSURE + " INTEGER," +
+                COL_OXYGEN_LEVELS + " INTEGER," +
                 COL_SLEEP + " REAL" +
                 ")";
         db.execSQL(createResults);
@@ -43,13 +43,13 @@ public class ResultsHelper extends SQLiteOpenHelper {
     }
 
     // Add a patient result
-    public boolean addPatientResult(String userEmail, int heartRate, int steps, int calories, float sleep) {
+    public boolean addPatientResult(String userEmail, int heartRate, int bloodPressure, int oxygenLevels, float sleep) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(COL_USER_EMAIL, userEmail);
         cv.put(COL_HEART_RATE, heartRate);
-        cv.put(COL_STEPS, steps);
-        cv.put(COL_CALORIES, calories);
+        cv.put(COL_BLOOD_PRESSURE, bloodPressure);
+        cv.put(COL_OXYGEN_LEVELS, oxygenLevels);
         cv.put(COL_SLEEP, sleep);
         long result = db.insert(TABLE_RESULTS, null, cv);
         return result != -1;

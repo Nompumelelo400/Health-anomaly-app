@@ -2,6 +2,8 @@ package com.example.healthalert;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
@@ -15,9 +17,10 @@ public class AddResultsTestActivity extends AppCompatActivity {
     // Shared list for all results
     public static ArrayList<String> resultsList = new ArrayList<>();
 
-    private EditText etHeartRate, etSteps, etCalories, etSleep;
+    private EditText etHeartRate, etBloodPressure, etOxygenLevels, etSleep;
     private Button btnSave, btnViewResults, btnBack;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,8 +28,8 @@ public class AddResultsTestActivity extends AppCompatActivity {
 
         // Initialize views
         etHeartRate = findViewById(R.id.etHeartRate);
-        etSteps = findViewById(R.id.etSteps);
-        etCalories = findViewById(R.id.etCalories);
+        etBloodPressure = findViewById(R.id.etBloodPressure);
+        etOxygenLevels = findViewById(R.id.etOxygenLevels);
         etSleep = findViewById(R.id.etSleep);
         btnSave = findViewById(R.id.btnSave);
         btnViewResults = findViewById(R.id.btnViewResults);
@@ -60,23 +63,23 @@ public class AddResultsTestActivity extends AppCompatActivity {
 
     private void saveResults() {
         String heartRateStr = etHeartRate.getText().toString().trim();
-        String stepsStr = etSteps.getText().toString().trim();
-        String caloriesStr = etCalories.getText().toString().trim();
+        String bloodPressureStr = etBloodPressure.getText().toString().trim();
+        String oxygenLevelsStr = etOxygenLevels.getText().toString().trim();
         String sleepStr = etSleep.getText().toString().trim();
 
-        if (heartRateStr.isEmpty() || stepsStr.isEmpty() || caloriesStr.isEmpty() || sleepStr.isEmpty()) {
+        if (heartRateStr.isEmpty() || bloodPressureStr.isEmpty() || oxygenLevelsStr.isEmpty() || sleepStr.isEmpty()) {
             Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
             return;
         }
 
         int heartRate = Integer.parseInt(heartRateStr);
-        int steps = Integer.parseInt(stepsStr);
-        int calories = Integer.parseInt(caloriesStr);
+        int bloodPressure = Integer.parseInt(bloodPressureStr);
+        int oxygenLevels = Integer.parseInt(oxygenLevelsStr);
         double sleep = Double.parseDouble(sleepStr);
 
         String resultSummary = "Heart Rate: " + heartRate + " bpm\n"
-                + "Steps: " + steps + "\n"
-                + "Calories: " + calories + " kcal\n"
+                + "Blood pressure: " + bloodPressure + "\n"
+                + "Oxygen levels: " + oxygenLevels + " %\n"
                 + "Sleep: " + sleep + " hrs";
 
         resultsList.add(resultSummary);
@@ -87,7 +90,7 @@ public class AddResultsTestActivity extends AppCompatActivity {
             estimation = "⚠️ Your vitals suggest you might be fatigued or stressed.";
         } else if (heartRate > 100) {
             estimation = "🚨 Your heart rate is high. Consider taking a rest or seeking medical advice.";
-        } else if (steps > 8000 && sleep >= 7) {
+        } else if (bloodPressure > 8000 && sleep >= 7) {
             estimation = "✅ You’re doing great! Keep maintaining this healthy routine.";
         } else {
             estimation = "🙂 You’re on track! Try to improve your sleep and activity balance.";
@@ -102,8 +105,8 @@ public class AddResultsTestActivity extends AppCompatActivity {
 
         // Clear inputs
         etHeartRate.setText("");
-        etSteps.setText("");
-        etCalories.setText("");
+        etBloodPressure.setText("");
+        etOxygenLevels.setText("");
         etSleep.setText("");
     }
 }

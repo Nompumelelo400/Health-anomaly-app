@@ -45,10 +45,10 @@
 
         <!-- Steps -->
         <EditText
-            android:id="@+id/etSteps"
+            android:id="@+id/etBloodPressure"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Steps"
+            android:hint="Blood Pressure(Bp)"
             android:inputType="number"
             android:padding="12dp"
             android:layout_marginBottom="12dp"
@@ -58,10 +58,10 @@
 
         <!-- Calories -->
         <EditText
-            android:id="@+id/etCalories"
+            android:id="@+id/etOxygenLevels"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Calories (kcal)"
+            android:hint="Oxygen Levels(O2)"
             android:inputType="number"
             android:padding="12dp"
             android:layout_marginBottom="12dp"
